@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Student" representedClassName="Student" syncable="YES">
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="studentID" optional="YES" attributeType="String"/>
+        <relationship name="supervisor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Supervisor" inverseName="student" inverseEntity="Supervisor"/>
+        <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="tasks" inverseEntity="Student"/>
+    </entity>
+    <entity name="Supervisor" representedClassName="Supervisor" syncable="YES">
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="supervisorID" optional="YES" attributeType="String"/>
+        <relationship name="student" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="supervisor" inverseEntity="Student"/>
+    </entity>
+    <entity name="Tasks" representedClassName="Tasks" syncable="YES">
+        <attribute name="taskName" optional="YES" attributeType="String"/>
+        <relationship name="student" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tasks" inverseName="student" inverseEntity="Tasks"/>
+    </entity>
+    <elements>
+        <element name="Student" positionX="-425.95703125" positionY="27.4296875" width="128" height="118"/>
+        <element name="Supervisor" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="Tasks" positionX="-215.3671875" positionY="307.359375" width="128" height="73"/>
+    </elements>
+</model>
